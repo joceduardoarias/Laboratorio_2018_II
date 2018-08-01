@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-int valorIngresado (void);
+int PedirNumero (void);
 
 
 float AreaCirculo (float r);
@@ -11,7 +11,7 @@ int main()
     float valor;
     float Area;
 
-    valor = valorIngresado();
+    valor = PedirNumero();
     Area = AreaCirculo(valor);
     printf("Area del Circulo: %.2f ",Area);
     return 0;
@@ -19,7 +19,7 @@ int main()
 /** \brief Solicita al usuario ingresar un valor
  * \return  retorna un valor tipo float
  */
-int valorIngresado(void)
+int PedirNumero(void)
 {
     int retorno;
     printf("ingrese un numero:");
