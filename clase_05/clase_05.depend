@@ -1,0 +1,10 @@
+# depslib dependency file v1.0
+1533091233 source:c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_05\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"utn.h"
+
+1533091165 c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_05\utn.h
+	<stdio.h>
+
