@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1533517266 source:c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_07_abm\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"utn.h"
+
+1533517176 c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_07_abm\utn.h
+	<stdio.h>
+
+1533520537 source:c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_07_abm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
