@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1533602678 source:c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_08_struct\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	"utn.h"
+
+1533598011 c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_08_struct\utn.h
+	<stdio.h>
+
+1533601382 source:c:\users\elkinjose\documents\laboratorios\lenguaje_c\laboratorio_2018_ii\clase_08_struct\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+
