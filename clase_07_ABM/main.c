@@ -46,9 +46,10 @@ int main()
                 printf("\n ingrese el apellido: ");
                 fflush(stdin);
                 scanf("%s",apellido[indiceLugarLibre]);
+                legajo[indiceLugarLibre] =auxLegajo;
 
             }
-            legajo[indiceLugarLibre] =auxLegajo;
+
 
 
             break;
