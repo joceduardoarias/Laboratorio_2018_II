@@ -1,118 +1,189 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "utn_gestion.h"
+#include "Funciones.h"
+#define MAX_ARRAY 1000
 
 int main()
 {
-    eproductos producto[1000],auxStruc;
     char seguir = 's';
+    eproductos producto[1000];
+    eproductos aux;
     int opcion,i,j;
-    int indiceLugarLibre;
+    int indiceLugarlibre;
     int indiceResultadoBusqueda;
     int auxId;
-    inicializarArrayStruct(producto,1000,-1);
+    int auxStock;
+    float auxImporte;
 
+    char IdStr [20];
+    char descripcionStr[20];
+    char stockStr[20];
+    char importeStr[20];
+
+    inicialiarArrayStruc(producto,MAX_ARRAY,-1);
     do
-    {   system("cls");
-        printf("\n1. ALTA\n2. BAJA\n3. MODIFICACION\n4. LISTAR\n5. ORDENAR\n6. SALIR ");
-        opcion = getInt("\n Selecione una opcion: ");
-        system("pause");
+    {
+        system("cls");
+        printf("\n1. ALTA\n2. BAJA\n3. MODIFICACION\n4. LISTAR\n5. ORDENADO ALFABETICO\n6. ORDENADO X CANTIDAD\n7. INFORME MENOR IMPORTE \n8. SALIR");
+        opcion = getInt("SELECCIONE UNA OPCION: ");
         switch(opcion)
         {
         case 1:
             system("cls");
-            printf("\nALTA");
-            indiceLugarLibre = buscarPrimeraOcurrencia(producto,1000,-1);
-            if(indiceLugarLibre == -1)
+            printf("\n ALTA");
+            indiceLugarlibre = buscarPrimeraOcurrencia(producto,MAX_ARRAY,-1);
+            if(indiceLugarlibre == -1)
             {
-                printf("\n No hay lugares libres para cargar datos");
+                printf("\nNO HAY LUGAR DISPONIBLE PARA CARGAR DATOS ");
+            }
+            if(getStringNumeros("\n Ingrese ID: ",IdStr) != 1)
+            {
+                printf("\n El ID debe ser solo numero");
                 break;
             }
-            auxId = getInt("\n Ingrese el ID: ");
-            if(buscarPrimeraOcurrencia(producto,1000,auxId)!= -1)
+            auxId = atoi(IdStr);
+            if(buscarPrimeraOcurrencia(producto,MAX_ARRAY,auxId) != -1)
             {
-                printf("\n El producto %d ya existe", auxId);
+                printf("\n El ID  ya existe !!! ");
                 break;
             }
-            producto[indiceLugarLibre].id = auxId;
-            printf("\n Ingrese descripcion del producto: ");
-            fflush(stdin);
-            gets(producto[indiceLugarLibre].descripcion);
-            fflush(stdin);
-            printf("\n Ingrese la cantidad: ");
-            scanf("%d",&producto[indiceLugarLibre].cantidad);
-            printf("\n Ingrese el importe: ");
-            scanf("%f",&producto[indiceLugarLibre].importe);
-            system("pause");
+            if(getStringLetras("Ingrese la Descripcion: ",descripcionStr) != 1)
+            {
+                printf("\n Debe ingresar solo letras ");
+                break;
+            }
+            if(getStringNumeros("Ingrse el stock: ",stockStr) != 1)
+            {
+                printf("\n Debe ingresar solo numeros ");
+                break;
+            }
+            auxStock = atoi(stockStr);
+            if(getStringNumeros("Ingrese el importe: ",importeStr) != 1)
+            {
+                printf("\n Debe ingresar solo numeros ");
+                break;
+            }
+            auxImporte = atof(importeStr);
+            producto[indiceLugarlibre].id = auxId;
+            strcpy(producto[indiceLugarlibre].descripcion,descripcionStr);
+            producto[indiceLugarlibre].stock = auxStock;
+            producto[indiceLugarlibre].importe = auxImporte;
+
             break;
         case 2:
             system("cls");
-            printf("\n BAJA ");
-            auxId = getInt("\n Ingrese ID del producto a dar de baja: ");
-            if(buscarPrimeraOcurrencia(producto,1000,auxId) == -1)
+            printf("\n BAJA");
+            if(getStringNumeros("Ingrese el numero del ID para hacer la baja: ",IdStr) != 1)
             {
-                printf("\n El ID %03d del producto no existe ", auxId);
+                printf("\n Debe ingresar solo numeros ");
                 break;
             }
-            indiceResultadoBusqueda = buscarPrimeraOcurrencia(producto,1000,auxId);
+            auxId = atoi(IdStr);
+            if(buscarPrimeraOcurrencia(producto,MAX_ARRAY,auxId)== -1)
+            {
+                printf("\n El ID no existe ");
+                break;
+            }
+            indiceResultadoBusqueda = buscarPrimeraOcurrencia(producto,MAX_ARRAY,auxId);
             producto[indiceResultadoBusqueda].id = -1;
             system("pause");
             break;
         case 3:
             system("cls");
-            printf("\n MODIFICACIONES ");
-            auxId = getInt("\n Ingrese ID de producto a modificar: ");
-            if(buscarPrimeraOcurrencia(producto,1000,auxId)== -1)
+            printf("\n MODIFICACION");
+            if(getStringNumeros("\n Ingrese ID para modificar: ",IdStr) != 1)
             {
-                printf("\n El ID %d del producto no existe !!!",auxId);
+                printf("\n Debe ingresar solo numeros ");
                 break;
             }
-            indiceResultadoBusqueda = buscarPrimeraOcurrencia(producto,1000,auxId);
-            printf("\n ingrese nueva descripcion: ");
-            fflush(stdin);
-            gets(producto[indiceResultadoBusqueda].descripcion);
-            printf("\n Ingrese nuevo stock: ");
-            fflush(stdin);
-            scanf("%d",&producto[indiceResultadoBusqueda].cantidad);
-            printf("\n Ingrese nuevo stock: ");
-            fflush(stdin);
-            scanf("%f",&producto[indiceResultadoBusqueda].importe);
+            auxId = atoi(IdStr);
+            if(buscarPrimeraOcurrencia(producto,MAX_ARRAY,auxId) == -1)
+            {
+                printf("\n El ID NO EXISTE");
+                break;
+            }
+            if(getStringLetras("\nIngrese nueva descripcion: ",descripcionStr) != 1 )
+            {
+                printf("\n Debe ingresar solo letras");
+                break;
+            }
+            if(getStringNumeros("\n Ingrese nuevo stock: ",stockStr) != 1)
+            {
+                printf("\n Debe ingresar solo numeros");
+                break;
+            }
+            auxStock = atoi(stockStr);
+            if(getStringNumeros("\n Ingrese nuevo importe: ",importeStr) != 1)
+            {
+                printf("\n Debe ingresar solo numeros");
+                break;
+            }
+            auxImporte = atof(importeStr);
+            strcpy(producto[i].descripcion,descripcionStr);
+            producto[i].stock = auxStock;
+            producto[i].importe = auxImporte;
             system("pause");
             break;
         case 4:
             system("cls");
-            printf("\n ID   DESCRIPCION  CANTIDAD  IMPORTE ");
-            for(i=0; i<1000; i++)
+            printf("\n LISTAR ");
+            printf("\n ID       NOMBRE       STOCK       IMPORTE");
+            for(i=0; i<MAX_ARRAY; i++)
             {
                 if(producto[i].id != -1)
                 {
-                    printf("\n %03d %10s %10d %10.2f ", producto[i].id,producto[i].descripcion,producto[i].cantidad,producto[i].importe);
+                    printf("\n %03d %10s %10d  %10.2f \n", producto[i].id,producto[i].descripcion,producto[i].stock,producto[i].importe );
+
                 }
             }
             system("pause");
             break;
         case 5:
-            printf("\n ORDENAR ");
-            for(i=0;i<1000-1;i++)
+            system("cls");
+            printf("\n ORDENAR");
+            for(i=0; i<MAX_ARRAY-1; i++)
             {
-                for(j=i+1;j<1000;j++)
+                for(j=i+1; j<MAX_ARRAY; j++)
                 {
-                    if(strcmp(producto[i].descripcion,producto[j].descripcion)>0)
+                    if(strcmp(producto[i].descripcion,producto[j].descripcion)<0)
                     {
-                        auxStruc = producto[i];
-                        producto[i]=producto[j];
-                        producto[j]=auxStruc;
-
+                        aux = producto[i];
+                        producto[i] = producto[j];
+                        producto[j] = aux;
                     }
                 }
             }
-            break;
-        case 6:
-            seguir = 'n';
             system("pause");
             break;
+        case 6:
+            system("cls");
+            printf("\n ORDENAMIENTO X CANTIDAD");
+            for(i=0; i<MAX_ARRAY-1; i++)
+            {
+                for(j=i+1; j<MAX_ARRAY; j++)
+                {
+                    if( producto[i].stock > producto[j].stock)
+                    {
+                        aux = producto[i];
+                        producto[i] = producto[j];
+                        producto[j] = aux;
+                    }
+                }
+            }
+            system("pause");
+            break;
+        case 7:
+            system("cls");
+            printf("\n PRODUCTO CON MENOR IMPORTE ");
+            importeMinimo(producto,MAX_ARRAY);
+            system("pause");
+            break;
+        case 8:
+            seguir = 'n';
+            break;
         }
+
     }
     while(seguir == 's');
     return 0;
