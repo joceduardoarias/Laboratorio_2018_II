@@ -1,0 +1,26 @@
+# depslib dependency file v1.0
+1538961598 source:c:\users\elkinjose\documents\laboratorios\practica\peliculas\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"peliculas.h"
+
+1537408717 c:\users\elkinjose\documents\laboratorios\practica\peliculas\utn.h
+
+1538966284 c:\users\elkinjose\documents\laboratorios\practica\peliculas\peliculas.h
+
+1538868613 source:c:\users\elkinjose\documents\laboratorios\practica\peliculas\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1538966330 source:c:\users\elkinjose\documents\laboratorios\practica\peliculas\peliculas.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"peliculas.h"
+
