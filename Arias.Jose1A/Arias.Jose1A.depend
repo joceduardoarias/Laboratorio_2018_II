@@ -1,0 +1,37 @@
+# depslib dependency file v1.0
+1539006244 source:d:\arias.jose1a\arias.jose1a\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"juegos.h"
+	"utn.h"
+
+1539005225 d:\arias.jose1a\arias.jose1a\juegos.h
+
+1538998761 source:d:\arias.jose1a\arias.jose1a\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1538998761 d:\arias.jose1a\arias.jose1a\utn.h
+
+1539011126 source:d:\arias.jose1a\arias.jose1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"juegos.h"
+	"clientes.h"
+
+1539011034 source:d:\arias.jose1a\arias.jose1a\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"juegos.h"
+	"clientes.h"
+
+1539008454 d:\arias.jose1a\arias.jose1a\clientes.h
+
