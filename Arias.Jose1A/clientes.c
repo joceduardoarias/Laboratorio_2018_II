@@ -73,13 +73,13 @@ void setArrayClientes(eClientes* arrayClientes,char* nombre,char* apellido,char 
 }
 void mostrarUnCliente(eClientes* arrayClientes, int indice)
 {
-    printf("\n %d \t %s \t %s \t %c \t %s",arrayClientes[indice].idCliente,arrayClientes[indice].nombre,arrayClientes[indice].apellido,arrayClientes[indice].sexo,arrayClientes[indice].localidad);
+    printf("\n %d \t %22s \t %16s \t %c \t %18s",arrayClientes[indice].idCliente,arrayClientes[indice].nombre,arrayClientes[indice].apellido,arrayClientes[indice].sexo,arrayClientes[indice].localidad);
 }
 void mostrarTodosClientes(eClientes* arrayClientes, int lenClientes )
 {
     int i;
     system("cls");
-    printf("\n ID_CLIENTE \t NOMBRE  \t APELLIDO SEXO LOCALIDAD \n");
+    printf("\n ID_CLIENTE \t\t NOMBRE  \t\t APELLIDO \tSEXO \t\t LOCALIDAD \n");
     for(i=0; i<lenClientes; i++)
     {
         if(arrayClientes[i].isEmpty == CUSTUMER_USED)
@@ -87,8 +87,8 @@ void mostrarTodosClientes(eClientes* arrayClientes, int lenClientes )
             mostrarUnCliente(arrayClientes,i);
         }
     }
+     printf("\n\n");
     system("pause");
-    printf("\n\n");
 }
 void AltaClientes(eClientes* arrayClientes, int lenClientes )
 {
@@ -111,17 +111,17 @@ void AltaClientes(eClientes* arrayClientes, int lenClientes )
             break;
         }
         auxId = id_findNexIdCliente(arrayClientes,lenClientes);
-        if(getStringLetras("\n Ingrese descripcion: ",nombreSrt)!= 1)
+        if(getStringLetras("\n Ingrese nombre: ",nombreSrt)!= 1)
         {
             printf("\n Ingrese solo letras!!!");
             break;
         }
-        if(getStringLetras("\n Ingrese descripcion: ",apellidoSrt)!= 1)
+        if(getStringLetras("\n Ingrese apellido: ",apellidoSrt)!= 1)
         {
-            printf("\n Ingrese solo letras!!!");
+            printf("\n Ingrese solo letras!!!\n");
             break;
         }
-        if(getStringLetras("\n Ingrese importe: ",localidadSrt)!= 1)
+        if(getStringLetras("\n Ingrese localidad: ",localidadSrt)!= 1)
         {
             printf("\n Ingrese solo numeros");
             break;
@@ -157,10 +157,10 @@ void modificarClientes(eClientes* arrayClientes, int lenClientes )
         {
         case 1:
             system("cls");
-            printf("\n MODIFICAR NOMBRE");
+            printf("\n MODIFICAR NOMBRE\n");
             if(getStringNumeros("\n Ingrese id cliente: ",idClienteSrt)!= 1)
             {
-                printf("\n Ingrese solo numeros!!!");
+                printf("\n Ingrese solo numeros!!!\n");
                 break;
             }
             auxIdCliente = atoi(idClienteSrt);
@@ -173,27 +173,27 @@ void modificarClientes(eClientes* arrayClientes, int lenClientes )
             mostrarUnCliente(arrayClientes,indexResultadoBusqueda);
             if(getStringLetras("\n Ingrese nueva nombre: ",nombreSrt)!= 1)
             {
-                printf("\n Ingrese solo letras");
+                printf("\n Ingrese solo letras\n");
                 break;
             }
             seguir = getChar("\n Confirmar modificacion (s/n): ");
             if(seguir == 's')
             {
                 strcpy(arrayClientes[indexResultadoBusqueda].nombre,nombreSrt);
-                printf("\n MODIFICACION EXITOSA !!!");
+                printf("\n MODIFICACION EXITOSA !!!\n");
             }
             else
             {
-                printf("\n Modificacion Cancelda!!!");
+                printf("\n Modificacion Cancelda!!!\n");
             }
             system("pause");
             break;
         case 2:
             system("cls");
-            printf("\n MODIFICAR APELLIDO");
+            printf("\n MODIFICAR APELLIDO\n");
             if(getStringNumeros("\n Ingrese id cliente: ",idClienteSrt)!= 1)
             {
-                printf("\n Ingrese solo numeros!!!");
+                printf("\n Ingrese solo numeros!!!\n");
                 break;
             }
             auxIdCliente = atoi(idClienteSrt);
@@ -206,19 +206,20 @@ void modificarClientes(eClientes* arrayClientes, int lenClientes )
             mostrarUnCliente(arrayClientes,indexResultadoBusqueda);
             if(getStringLetras("\n Ingrese nueva apellido: ",apellidoSrt)!= 1)
             {
-                printf("\n Ingrese solo letras");
+                printf("\n Ingrese solo letras\n");
                 break;
             }
             seguir = getChar("\n Confirmar modificacion (s/n): ");
             if(seguir == 's')
             {
                 strcpy(arrayClientes[indexResultadoBusqueda].apellido,apellidoSrt);
-                printf("\n MODIFICACION EXITOSA !!!");
+                printf("\n MODIFICACION EXITOSA !!!\n");
             }
             else
             {
-                printf("\n Modificacion Cancelda!!!");
+                printf("\n Modificacion Cancelda!!!\n");
             }
+            printf("\n\n");
             system("pause");
             break;
         case 3:
@@ -346,7 +347,7 @@ void controllerClientes(eClientes* arrayClientes, int lenClientes )
     do
     {
         system("cls");
-        printf("\n1.ALTA \n2.BAJA 3.MODIFICACION\n4. LISTAR \n5. SALIR");
+        printf("\n1. ALTA \n2. MODIFICACION \n3. BAJA \n4. LISTAR \n5. SALIR");
         opcion = getInt("\n Seleccione una opcion: ");
         switch(opcion)
         {

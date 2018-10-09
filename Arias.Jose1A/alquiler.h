@@ -1,5 +1,7 @@
 #ifndef ALQUILER_H_INCLUDED
 #define ALQUILER_H_INCLUDED
+#include "clientes.h"
+#include "juegos.h"
 #define RENT_EMPTY 0
 #define RENT_USED 1
 #define RENT_DELETE 2
@@ -44,7 +46,7 @@ int buscarPrimeraOcurrenciaAlquiler(eAlquiler* arrayAlquiler, int lenAlquiler , 
  * \return  devuelve -1 si no encuctra coincidencia o retornao el indice
  *
  */
-int buscarPrimeraOcurrenciaIdAlquiler(eAlquiler* arrayAlquiler, int lenAlquiler , int idAlquiler);
+//int buscarPrimeraOcurrenciaIdAlquiler(eAlquiler* arrayAlquiler, int lenAlquiler , int idAlquiler);
 /** \brief
  *
  * \param
@@ -61,16 +63,9 @@ int id_findNexIdAlquiler(eAlquiler* arrayAlquiler, int lenAlquiler );
  *
  */
 void setArrayAlquiler(eAlquiler* arrayAlquiler,int idAlquiler,int IdJuego,int idCliente,int indice,int dia,int mes,int anio);
-/** \brief Imprime una elemnto del array de acuerdo al indice recibido
-  * \param eJuegos* arrayJuegos es el array de juegos
-  * \param indice es lugar dentro del array juegos
- */
-void mostrarUnAlquiler(eAlquiler* arrayAlquiler, int indice);
-/** \brief Imprime todos los elemnto del array
-  * \param eJuegos* arrayJuegos es el array de juegos
-  * \param lenJuegos es la longitud del array juegos;
- */
-void mostrarTodosAlquileres(eAlquiler* arrayAlquiler, int lenAlquiler );
-void AltaAlquiler(eAlquiler* arrayAlquiler, int lenAlquiler );
-void controllerAlquiler(eAlquiler* arrayAlquiler, int lenAlquiler);
+
+void AltaAlquiler(eAlquiler* arrayAlquiler, int lenAlquiler, eClientes* ArrayClientes, int lenClientes, eJuegos* arrayJuegos, int lenJuegos);
+void controllerAlquiler(eAlquiler* arrayAlquiler, int lenAlquiler, eClientes* ArrayClientes, int lenClientes, eJuegos* arrayJuegos, int lenJuegos);
+void listarAlquileres(eAlquiler* arrayAlquiler, int lenAlquiler, eClientes* ArrayClientes, int lenClientes, eJuegos* arrayJuegos, int lenJuegos);
+void mostrarAlquileres(eAlquiler* arrayAlquiler, int lenAlquiler);
 #endif // ALQUILER_H_INCLUDED

@@ -70,7 +70,7 @@ void setArrayJuegos(eJuegos* arrayJuegos,char* descripcion,float importe,int idJ
 }
 void mostrarUnaJuego(eJuegos* arrayJuegos, int indice)
 {
-    printf("\n %d \t %s \t %f ",arrayJuegos[indice].idJuego,arrayJuegos[indice].descripcion,arrayJuegos[indice].importe);
+    printf("\n %d \t %20s \t %.2f ",arrayJuegos[indice].idJuego,arrayJuegos[indice].descripcion,arrayJuegos[indice].importe);
 }
 void mostrarTodosJuegos(eJuegos* arrayJuegos, int lenJuegos)
 {
@@ -84,8 +84,9 @@ void mostrarTodosJuegos(eJuegos* arrayJuegos, int lenJuegos)
             mostrarUnaJuego(arrayJuegos,i);
         }
     }
-    system("pause");
     printf("\n\n");
+    system("pause");
+
 }
 void AltaJuegos(eJuegos* arrayJuegos, int lenJuegos)
 {
@@ -139,8 +140,8 @@ void modificarJuegos(eJuegos* arrayJuegos, int lenJuegos)
     system("cls");
     printf("\n MODIFICACIONES\n");
     do
-    {
-        printf("\n1. DESCRIPCION \n2.IMPORTE\n3. SALIR\n");
+    {   system("cls");
+        printf("\n1. DESCRIPCION \n2. IMPORTE\n3. SALIR\n");
         opcion = getInt("\n Seleccione una opcion: ");
         switch(opcion)
         {
@@ -149,7 +150,7 @@ void modificarJuegos(eJuegos* arrayJuegos, int lenJuegos)
             printf("\n MODIFICAR DESCRIPCION");
             if(getStringNumeros("\n Ingrese id Juego: ",idJuegosSrt)!= 1)
             {
-                printf("\n Ingrese solo numeros!!!");
+                printf("\n Ingrese solo numeros!!!\n");
                 break;
             }
             auxId = atoi(idJuegosSrt);
@@ -162,19 +163,20 @@ void modificarJuegos(eJuegos* arrayJuegos, int lenJuegos)
             mostrarUnaJuego(arrayJuegos,indexResultadoBusqueda);
             if(getStringLetras("\n Ingrese nueva descripcion: ",descripcionSrt)!= 1)
             {
-                printf("\n Ingrese solo letras");
+                printf("\n Ingrese solo letras\n");
                 break;
             }
             seguir = getChar("\n Confirmar modificacion (s/n): ");
             if(seguir == 's')
             {
                 strcpy(arrayJuegos[indexResultadoBusqueda].descripcion,descripcionSrt);
-                printf("\n MODIFICACION EXITOSA !!!");
+                printf("\n MODIFICACION EXITOSA !!!\n");
             }
             else
             {
-                printf("\n Modificacion Cancelda!!!");
+                printf("\n Modificacion Cancelda!!!\n");
             }
+            printf("\n\n");
             system("pause");
             break;
         case 2:
@@ -182,7 +184,7 @@ void modificarJuegos(eJuegos* arrayJuegos, int lenJuegos)
             printf("\n MODIFICAR IMPORTE");
             if(getStringNumeros("\n Ingrese id Juego: ",idJuegosSrt)!= 1)
             {
-                printf("\n Ingrese solo numeros!!!");
+                printf("\n Ingrese solo numeros!!!\n");
                 break;
             }
             auxId = atoi(idJuegosSrt);
@@ -193,9 +195,9 @@ void modificarJuegos(eJuegos* arrayJuegos, int lenJuegos)
             }
             indexResultadoBusqueda = buscarPrimeraOcurrenciaId(arrayJuegos,lenJuegos,auxId);
             mostrarUnaJuego(arrayJuegos,indexResultadoBusqueda);
-            if(getStringLetras("\n Ingrese nuevo Importe: ",importeSrt)!= 1)
+            if(getStringNumerosFlotantes("\n Ingrese nuevo Importe: ",importeSrt)!= 1)
             {
-                printf("\n Ingrese solo numeros");
+                printf("\n Ingrese solo numeros\n");
                 break;
             }
             auxImporte = atof(importeSrt);
@@ -203,12 +205,13 @@ void modificarJuegos(eJuegos* arrayJuegos, int lenJuegos)
             if(seguir == 's')
             {
                 arrayJuegos[indexResultadoBusqueda].importe = auxImporte;
-                printf("\n MODIFICACION EXITOSA !!!");
+                printf("\n MODIFICACION EXITOSA !!!\n");
             }
             else
             {
-                printf("\n Modificacion Cancelda!!!");
+                printf("\n Modificacion Cancelda!!!\n");
             }
+            printf("\n\n");
             system("pause");
             break;
         case 3:
@@ -217,6 +220,7 @@ void modificarJuegos(eJuegos* arrayJuegos, int lenJuegos)
         }
     }
     while(seguir == 's');
+    printf("\n\n");
     system("pause");
 }
 void bajaJuegos(eJuegos* arrayJuegos, int lenJuegos)
@@ -276,7 +280,7 @@ void controllerJuegos(eJuegos* arrayJuegos, int lenJuegos)
     do
     {
         system("cls");
-        printf("\n1.ALTA \n2.BAJA 3.MODIFICACION\n4. LISTAR \n5. SALIR");
+        printf("\n1. ALTA \n2. MODIFICACION \n3. BAJA\n4. LISTAR \n5. SALIR");
         opcion = getInt("\n Seleccione una opcion: ");
         switch(opcion)
         {
