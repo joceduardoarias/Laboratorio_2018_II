@@ -96,11 +96,11 @@ void AltaClientes(eClientes* arrayClientes, int lenClientes )
     char seguir = 's';
     int indexLugarLIbre;
     int auxId;
-
     char nombreSrt[51];
     char apellidoSrt[51];
     char localidadSrt[51];
     char sexo;
+
     system("cls");
     printf("\n ALTA \n");
     while(seguir == 's')
@@ -147,12 +147,12 @@ void modificarClientes(eClientes* arrayClientes, int lenClientes )
     int indexResultadoBusqueda;
     int auxIdCliente;
 
-
     char idClienteSrt[51];
     char nombreSrt[51];
     char apellidoSrt[51];
     char localidadSrt[51];
     char sexo;
+
     system("cls");
     printf("\n MODIFICACIONES\n");
     do

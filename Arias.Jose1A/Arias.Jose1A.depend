@@ -86,3 +86,70 @@
 	"clientes.h"
 	"juegos.h"
 
+1539183662 source:d:\ariasjose\arias.jose1a\alquiler.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"alquiler.h"
+	"clientes.h"
+	"juegos.h"
+
+1539138214 d:\ariasjose\arias.jose1a\utn.h
+
+1539138214 d:\ariasjose\arias.jose1a\alquiler.h
+	"clientes.h"
+	"juegos.h"
+
+1539138214 d:\ariasjose\arias.jose1a\clientes.h
+
+1539138214 d:\ariasjose\arias.jose1a\juegos.h
+
+1539183873 source:d:\ariasjose\arias.jose1a\clientes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"utn.h"
+	"juegos.h"
+	"clientes.h"
+
+1539138214 source:d:\ariasjose\arias.jose1a\juegos.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"juegos.h"
+	"utn.h"
+
+1539138214 source:d:\ariasjose\arias.jose1a\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1539183123 source:d:\ariasjose\arias.jose1a\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"juegos.h"
+	"clientes.h"
+	"alquiler.h"
+	"informes.h"
+
+1539183661 source:d:\ariasjose\arias.jose1a\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"juegos.h"
+	"clientes.h"
+	"alquiler.h"
+	"informes.h"
+
+1539183170 d:\ariasjose\arias.jose1a\informes.h
+	"juegos.h"
+	"clientes.h"
+	"alquiler.h"
+

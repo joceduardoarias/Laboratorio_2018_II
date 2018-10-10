@@ -5,6 +5,7 @@
 #include "juegos.h"
 #include "clientes.h"
 #include "alquiler.h"
+#include "informes.h"
 #define TAM_GAME 5
 #define TAM_CUSTUMER 5
 #define TAM_RENT 25
@@ -15,11 +16,12 @@ int main()
     eAlquiler alquileres[TAM_RENT];
     int opcion;
     char seguir = 's';
+    //float importeTotal;
 
     initGame(juegos,TAM_GAME);
     initCliente(clientes,TAM_CUSTUMER);
     initAlquiler(alquileres,TAM_RENT);
-
+/*
     setArrayJuegos(juegos,"Bingo",200,1,0);
     setArrayJuegos(juegos,"Cara o Cruz",400,2,1);
     setArrayJuegos(juegos,"Dados",900,3,2);
@@ -38,11 +40,11 @@ int main()
     setArrayAlquiler(alquileres,4,1,4,3,17,2,2011);
     setArrayAlquiler(alquileres,5,2,5,4,8,11,2017);
 
-
+*/
     do
     {
         system("cls");
-        printf("\n1. ABM JUEGOS \n2. ABM CLIENTES \n3. ABM ALQUILER\n4. SALIR");
+        printf("\n1. ABM JUEGOS \n2. ABM CLIENTES \n3. ABM ALQUILER\n4. INFORMES\n5. SALIR");
         opcion = getInt("\n Seleccione una opcion: ");
         switch(opcion)
         {
@@ -56,6 +58,12 @@ int main()
             controllerAlquiler(alquileres,TAM_RENT,clientes,TAM_CUSTUMER,juegos,TAM_GAME);
             break;
         case 4:
+            system("cls");
+            controllerInformes(alquileres,TAM_RENT,juegos,TAM_GAME,clientes,TAM_CUSTUMER);
+            system("pause");
+            break;
+        case 5:
+
             seguir = 'n';
             break;
 
