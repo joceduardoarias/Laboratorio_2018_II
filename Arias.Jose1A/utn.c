@@ -193,3 +193,14 @@ int getStringNumerosFlotantes(char mensaje[],char input[])
     return 0;
 }
 
+int getStringAlfanumerico(char mensaje[],char input[])
+{
+    char aux[256];
+    getString(mensaje,aux);
+    if(esAlfaNumerico(aux))
+    {
+        strcpy(input,aux);
+        return 1;
+    }
+    return 0;
+}

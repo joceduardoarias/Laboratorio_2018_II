@@ -47,6 +47,7 @@ int esTelefono(char *str);
 /**
  * \brief Verifica si el valor recibido contiene solo letras y números
  * \param str Array con la cadena a ser analizada
+ * \param mensaje Es el mensaje a ser mostrado
  * \return 1 si contiene solo espacio o letras y números, y 0 si no lo es
  *
  */
@@ -93,6 +94,12 @@ int getStringNumeros(char mensaje[],char input[]);
  * \return 1 si el texto contiene solo números
  */
 int getStringNumerosFlotantes(char mensaje[],char input[]);
-
+/**
+ * \brief Solicita un texto al usuario y lo devuelve
+ * \param mensaje Es el mensaje a ser mostrado
+ * \param input Array donde se cargará el texto ingresado
+ * \return 1 si el texto contiene solo letras
+ */
+int getStringAlfanumerico(char mensaje[],char input[]);
 
 #endif // UTN_H_INCLUDED

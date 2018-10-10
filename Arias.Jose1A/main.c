@@ -5,9 +5,9 @@
 #include "juegos.h"
 #include "clientes.h"
 #include "alquiler.h"
-#define TAM_GAME 10
-#define TAM_CUSTUMER 100
-#define TAM_RENT 1000
+#define TAM_GAME 5
+#define TAM_CUSTUMER 5
+#define TAM_RENT 25
 int main()
 {
     eJuegos juegos[TAM_GAME];
@@ -23,7 +23,7 @@ int main()
     setArrayJuegos(juegos,"Bingo",200,1,0);
     setArrayJuegos(juegos,"Cara o Cruz",400,2,1);
     setArrayJuegos(juegos,"Dados",900,3,2);
-    setArrayJuegos(juegos,"Loteria",500,4,3);
+    setArrayJuegos(juegos,"Loteria",200,4,3);
     setArrayJuegos(juegos,"Poker",1000,5,4);
 
     setArrayClientes(clientes,"Juan","Gonzales",'m',"caba",1,0);

@@ -140,7 +140,8 @@ void modificarJuegos(eJuegos* arrayJuegos, int lenJuegos)
     system("cls");
     printf("\n MODIFICACIONES\n");
     do
-    {   system("cls");
+    {
+        system("cls");
         printf("\n1. DESCRIPCION \n2. IMPORTE\n3. SALIR\n");
         opcion = getInt("\n Seleccione una opcion: ");
         switch(opcion)
@@ -270,17 +271,48 @@ void bajaJuegos(eJuegos* arrayJuegos, int lenJuegos)
     printf("\n\n");
     system("pause");
 }
+void ordenamientoImprteDescripcion(eJuegos* arrayJuegos, int lenJuegos)
+{
+    int i,j;
+    eJuegos auxjuegos;
+
+    for(i=0; i<lenJuegos-1; i++)
+    {
+        if(arrayJuegos[i].isEmpty == GAME_USED)
+        {
+            for(j=i+1; j<lenJuegos; j++)
+            {
+                if(arrayJuegos[i].importe > arrayJuegos[j].importe)
+                {
+                    auxjuegos = arrayJuegos[i];
+                    arrayJuegos[i] = arrayJuegos[j];
+                    arrayJuegos[j] = auxjuegos;
+                }
+                else
+                {
+                    if(arrayJuegos[i].importe == arrayJuegos[j].importe)
+                    {
+                        if(strcmpi(arrayJuegos[i].descripcion,arrayJuegos[j].descripcion)<0)
+                        {
+                            auxjuegos = arrayJuegos[i];
+                            arrayJuegos[i] = arrayJuegos[j];
+                            arrayJuegos[j] = auxjuegos;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 void controllerJuegos(eJuegos* arrayJuegos, int lenJuegos)
 {
     int opcion;
     char seguir = 's';
 
-
-
     do
     {
         system("cls");
-        printf("\n1. ALTA \n2. MODIFICACION \n3. BAJA\n4. LISTAR \n5. SALIR");
+        printf("\n1. ALTA \n2. MODIFICACION \n3. BAJA\n4. LISTAR\n5. ORDENAMIENTO \n6. SALIR");
         opcion = getInt("\n Seleccione una opcion: ");
         switch(opcion)
         {
@@ -297,6 +329,9 @@ void controllerJuegos(eJuegos* arrayJuegos, int lenJuegos)
             mostrarTodosJuegos(arrayJuegos,lenJuegos);
             break;
         case 5:
+            ordenamientoImprteDescripcion(arrayJuegos,lenJuegos);
+            break;
+        case 6:
             seguir = 'n';
             break;
 

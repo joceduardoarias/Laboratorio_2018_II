@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <ctype.h>
 #include "utn.h"
 #include "juegos.h"
 #include "clientes.h"
@@ -87,7 +88,7 @@ void mostrarTodosClientes(eClientes* arrayClientes, int lenClientes )
             mostrarUnCliente(arrayClientes,i);
         }
     }
-     printf("\n\n");
+    printf("\n\n");
     system("pause");
 }
 void AltaClientes(eClientes* arrayClientes, int lenClientes )
@@ -121,12 +122,17 @@ void AltaClientes(eClientes* arrayClientes, int lenClientes )
             printf("\n Ingrese solo letras!!!\n");
             break;
         }
-        if(getStringLetras("\n Ingrese localidad: ",localidadSrt)!= 1)
+        if(getStringAlfanumerico("\n Ingrese direccion: ",localidadSrt)!= 1)
         {
-            printf("\n Ingrese solo numeros");
+            printf("\n Ingrese solo numeros o letras ");
             break;
         }
         sexo = getChar("\n Ingrese sexo (m/f): ");
+        if(sexo!='f' && sexo!='m')
+        {
+            printf("\nSexo incorrecto, POR FAVOR PRESIONE 'f' para femeninio o 'm' para masculino!!!\n");
+            break;
+        }
         setArrayClientes(arrayClientes,nombreSrt,apellidoSrt,sexo,localidadSrt,auxId,indexLugarLIbre);
         seguir = getChar("\n seguir cargando datos (s/n): ");
     }
@@ -151,7 +157,8 @@ void modificarClientes(eClientes* arrayClientes, int lenClientes )
     printf("\n MODIFICACIONES\n");
     do
     {
-        printf("\n1. NOMBRE \n2. APELLIDO \n3. SEXO \n4. LOCALIDAD \n5. SALIR\n");
+        system("cls");
+        printf("\n1. NOMBRE \n2. APELLIDO \n3. SEXO \n4. DIRECCION \n5. SALIR\n");
         opcion = getInt("\n Seleccione una opcion: ");
         switch(opcion)
         {
@@ -239,20 +246,25 @@ void modificarClientes(eClientes* arrayClientes, int lenClientes )
             indexResultadoBusqueda = buscarPrimeraOcurrenciaIdCliente(arrayClientes,lenClientes,auxIdCliente);
             mostrarUnCliente(arrayClientes,indexResultadoBusqueda);
             sexo = getChar("\n Ingrese nuevo sexo: ");
+            if(sexo!='f' && sexo!='m')
+            {
+                printf("\nSexo incorrecto, POR FAVOR PRESIONE 'f' para femeninio o 'm' para masculino!!!\n");
+                break;
+            }
             seguir = getChar("\n Confirmar modificacion (s/n): ");
             if(seguir == 's')
             {
                 arrayClientes[indexResultadoBusqueda].sexo = sexo;
-                printf("\n MODIFICACION EXITOSA !!!");
+                printf("\n MODIFICACION EXITOSA !!!\n");
             }
             else
             {
-                printf("\n Modificacion Cancelda!!!");
+                printf("\n Modificacion Cancelda!!!\n");
             }
             break;
         case 4:
             system("cls");
-            printf("\n MODIFICAR localidad");
+            printf("\n MODIFICAR DIRECCION");
             if(getStringNumeros("\n Ingrese id cliente: ",idClienteSrt)!= 1)
             {
                 printf("\n Ingrese solo numeros!!!");
@@ -266,9 +278,9 @@ void modificarClientes(eClientes* arrayClientes, int lenClientes )
             }
             indexResultadoBusqueda = buscarPrimeraOcurrenciaIdCliente(arrayClientes,lenClientes,auxIdCliente);
             mostrarUnCliente(arrayClientes,indexResultadoBusqueda);
-            if(getStringLetras("\n Ingrese nueva localidad: ",localidadSrt)!= 1)
+            if(getStringAlfanumerico("\n Ingrese direccion: ",localidadSrt)!= 1)
             {
-                printf("\n Ingrese solo letras");
+                printf("\n Ingrese solo numeros o letras ");
                 break;
             }
             seguir = getChar("\n Confirmar modificacion (s/n): ");
@@ -306,7 +318,7 @@ void bajaClientes(eClientes* arrayClientes, int lenClientes )
     printf("\nBAJAS\n");
     while(seguir == 's')
     {
-        if(getStringNumeros("\n Ingrese id Juegos: ",idClienteSrt)!= 1)
+        if(getStringNumeros("\n Ingrese id Cliente: ",idClienteSrt)!= 1)
         {
             printf("\n Ingrese solo numeros!!!");
             break;
@@ -342,12 +354,10 @@ void controllerClientes(eClientes* arrayClientes, int lenClientes )
     int opcion;
     char seguir = 's';
 
-
-
     do
     {
         system("cls");
-        printf("\n1. ALTA \n2. MODIFICACION \n3. BAJA \n4. LISTAR \n5. SALIR");
+        printf("\n1. ALTA \n2. MODIFICACION \n3. BAJA \n4. LISTAR\n5. ORDENAMIENTO \n6. SALIR");
         opcion = getInt("\n Seleccione una opcion: ");
         switch(opcion)
         {
@@ -364,10 +374,47 @@ void controllerClientes(eClientes* arrayClientes, int lenClientes )
             mostrarTodosClientes(arrayClientes,lenClientes);
             break;
         case 5:
+            ordenarmientoApellidoNombre(arrayClientes,lenClientes);
+            break;
+        case 6:
             seguir = 'n';
             break;
 
         }
     }
     while(seguir == 's');
+}
+void ordenarmientoApellidoNombre(eClientes* arrayClientes, int lenClientes)
+{
+    int i,j;
+    eClientes auxClientes;
+
+    for(i=0; i<lenClientes-1; i++)
+    {
+        if(arrayClientes[i].isEmpty == CUSTUMER_USED)
+        {
+            for(j=i+1; j<lenClientes; j++)
+            {
+                if(strcmpi(arrayClientes[i].apellido,arrayClientes[j].apellido)<0)
+                {
+                    auxClientes = arrayClientes[i];
+                    arrayClientes[i] = arrayClientes[j];
+                    arrayClientes[j] = auxClientes;
+                }
+                else
+                {
+                    if(strcmpi(arrayClientes[i].apellido,arrayClientes[j].apellido)==0)
+                    {
+                        if(strcmpi(arrayClientes[i].nombre,arrayClientes[j].nombre)<0)
+                        {
+                            auxClientes = arrayClientes[i];
+                            arrayClientes[i] = arrayClientes[j];
+                            arrayClientes[j] = auxClientes;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
 }

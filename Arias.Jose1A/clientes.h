@@ -13,7 +13,7 @@ typedef struct
     char localidad[51];
     int idJuego;
     int isEmpty;
-}eClientes;
+} eClientes;
 /** \brief To indicate that all position in the array are empty,
 * this function put the flag (isEmpty) in TRUE in all
 * position of the array
@@ -32,7 +32,7 @@ void initCliente(eClientes* arrayClientes, int lenClientes );
  * \return  devuelve -1 si no encuctra coincidencia o retornao el indice
  *
  */
-int buscarPrimeraOcurrenciaCliente(eClientes* arrayClientes, int lenClientes , int valor);
+int buscarPrimeraOcurrenciaCliente(eClientes* arrayClientes, int lenClientes, int valor);
 /** \brief busca en la estructura por el id recibido y devuelve el indice
  *
  * \param   eEmployee array a recorrer
@@ -41,13 +41,11 @@ int buscarPrimeraOcurrenciaCliente(eClientes* arrayClientes, int lenClientes , i
  * \return  devuelve -1 si no encuctra coincidencia o retornao el indice
  *
  */
-int buscarPrimeraOcurrenciaIdCliente(eClientes* arrayClientes, int lenClientes , int idCliente);
-/** \brief
- *
- * \param
- * \param
- * \return
- *
+int buscarPrimeraOcurrenciaIdCliente(eClientes* arrayClientes, int lenClientes, int idCliente);
+/** \brief calcula el campo id de cada cliente
+ * \param arrayClientes es array de clientes
+ * \param lenClientes es la longitud del array clientes
+ * \return retorna el id calculado
  */
 int id_findNexIdCliente(eClientes* arrayClientes, int lenClientes );
 /** \brief carga los datos ingresados y validados por el ususario en el array
@@ -68,9 +66,31 @@ void mostrarUnCliente(eClientes* arrayClientes, int indice);
   * \param lenJuegos es la longitud del array juegos;
  */
 void mostrarTodosClientes(eClientes* arrayClientes, int lenClientes );
+/** \brief  carga los datos de los clientes
+ * \param arrayClientes es array de clientes
+ * \param lenClientes es la longitud del array clientes
+ */
 void AltaClientes(eClientes* arrayClientes, int lenClientes );
+/** \brief  modifica los datos de los clientes
+ * \param arrayClientes es array de clientes
+ * \param lenClientes es la longitud del array clientes
+ */
 void modificarClientes(eClientes* arrayClientes, int lenClientes );
+/** \brief  mrealiza una baja logica los datos de los clientes
+ * \param arrayClientes es array de clientes
+ * \param lenClientes es la longitud del array clientes
+ */
 void bajaClientes(eClientes* arrayClientes, int lenClientes );
+/** \brief controla la carga, modificacion y bajas de los clientes
+ * \param arrayClientes es array de clientes
+ * \param lenClientes es la longitud del array clientes
+ */
 void controllerClientes(eClientes* arrayClientes, int lenClientes );
+/** \brief ordena los clientes cargados en el array por el campo apellido
+ *  y por el campo nombre
+ * \param arrayClientes es array de clientes
+ * \param lenClientes es la longitud del array clientes
+ */
+void ordenarmientoApellidoNombre(eClientes* arrayClientes, int lenClientes);
 
 #endif // CLIENTES_H_INCLUDED
