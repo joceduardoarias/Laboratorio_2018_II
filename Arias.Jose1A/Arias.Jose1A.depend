@@ -35,7 +35,7 @@
 
 1539008454 d:\arias.jose1a\arias.jose1a\clientes.h
 
-1539132040 source:c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\clientes.c
+1539404418 source:c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\clientes.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -44,20 +44,20 @@
 	"juegos.h"
 	"clientes.h"
 
-1539125373 c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\utn.h
+1539404418 c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\utn.h
 
-1539135093 c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\juegos.h
+1539404418 c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\juegos.h
 
-1539134793 c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\clientes.h
+1539404418 c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\clientes.h
 
-1539127709 source:c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\juegos.c
+1539404418 source:c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\juegos.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
 	"juegos.h"
 	"utn.h"
 
-1539127341 source:c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\main.c
+1539404880 source:c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\main.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -65,15 +65,16 @@
 	"juegos.h"
 	"clientes.h"
 	"alquiler.h"
+	"informes.h"
 
-1539125330 source:c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\utn.c
+1539404418 source:c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\utn.c
 	<stdio.h>
 	<stdlib.h>
 	<time.h>
 	<string.h>
 	"utn.h"
 
-1539056226 source:c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\alquiler.c
+1539404418 source:c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\alquiler.c
 	<stdio.h>
 	<stdlib.h>
 	<string.h>
@@ -82,7 +83,7 @@
 	"clientes.h"
 	"juegos.h"
 
-1539054941 c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\alquiler.h
+1539404418 c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\alquiler.h
 	"clientes.h"
 	"juegos.h"
 
@@ -149,6 +150,21 @@
 	"informes.h"
 
 1539183170 d:\ariasjose\arias.jose1a\informes.h
+	"juegos.h"
+	"clientes.h"
+	"alquiler.h"
+
+1539408547 source:c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\informes.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"utn.h"
+	"juegos.h"
+	"clientes.h"
+	"alquiler.h"
+	"informes.h"
+
+1539407771 c:\users\elkinjose\documents\laboratorios\laboratorio_2018_ii\arias.jose1a\informes.h
 	"juegos.h"
 	"clientes.h"
 	"alquiler.h"

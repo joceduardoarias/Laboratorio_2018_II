@@ -43,7 +43,7 @@ void listaClientesJuegoDeterminado(eAlquiler* arrayAlquilres, int lenAlquilres,e
  * \param eClientes arrayCliente es el array clientes
  * \param lenClientes es la longotud del array clientes
  */
- void listaJuegosClientesDeterminado(eAlquiler* arrayAlquilres, int lenAlquilres,eJuegos* arrayJuegos,int lenJuegos,eClientes* arrayClientes,int lenClientes);
+void listaJuegosClientesDeterminado(eAlquiler* arrayAlquilres, int lenAlquilres,eJuegos* arrayJuegos,int lenJuegos,eClientes* arrayClientes,int lenClientes);
 /** \brief controla el acceso a los informes
  * \param eAlquiler* es el array de alquileres
  * \param lenAlquiler el la longitud de los alquilres
@@ -60,22 +60,47 @@ void controllerInformes(eAlquiler* arrayAlquilres, int lenAlquilres,eJuegos* arr
  * \return
  *
  */
- void bubbleSort (eJuegos* arrayJuegos,int lenJuegos);
- /** \brief
-  *
-  * \param
-  * \param
-  * \return
-  *
-  */
-  void ordenacion_insercion (eClientes* arrayClientes, int lenClientes);
-  /** \brief listar juegos alquilados fecha determinada
-   * \param eAlquiler* es el array de alquileres
+void bubbleSort (eJuegos* arrayJuegos,int lenJuegos);
+/** \brief
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
+void ordenacion_insercion (eClientes* arrayClientes, int lenClientes);
+/** \brief listar juegos alquilados fecha determinada
+ * \param eAlquiler* es el array de alquileres
+* \param lenAlquiler el la longitud de los alquilres
+* \param eJuegos arraJuegos es el array juegos
+* \param lenJuegos es la longitud del array juegos
+* \param eClientes arrayCliente es el array clientes
+* \param lenClientes es la longotud del array clientes
+ */
+
+/** \brief calcula la cantidad de veces que un juego fue alquilado
+ *
+ * \param eAlquiler* es el array de alquileres
+ * \param lenAlquiler el la longitud de los alquilres
+ * \param idJuego es el id del juego alquilado
+ * \return la cantidad de veces que un juego fue alquilado
+ */
+int cantidadAlquileresPorJuego(eAlquiler* arrayAlquilres, int lenAlquilres,int idJuego);
+/** \brief calcula el minimo de juegos alquildos
+ *
+ * \param eAlquiler* es el array de alquileres
  * \param lenAlquiler el la longitud de los alquilres
  * \param eJuegos arraJuegos es el array juegos
  * \param lenJuegos es la longitud del array juegos
- * \param eClientes arrayCliente es el array clientes
- * \param lenClientes es la longotud del array clientes
-   */
-
+ * \return el minimo de juegos alquilados
+ */
+int minimoJuegosAlquilados(eAlquiler* arrayAlquilres, int lenAlquilres,eJuegos* arrayJuegos,int lenJuegos);
+/** \brief lista los juegos Menos Alquilados
+ *
+ * \param eAlquiler* es el array de alquileres
+ * \param lenAlquiler el la longitud de los alquilres
+ * \param eJuegos arraJuegos es el array juegos
+ * \param lenJuegos es la longitud del array juegos
+ */
+void juegosMenosAlquilados(eAlquiler* arrayAlquilres, int lenAlquilres,eJuegos* arrayJuegos,int lenJuegos);
 #endif // INFORMES_H_INCLUDED

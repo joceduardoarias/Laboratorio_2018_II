@@ -21,7 +21,7 @@ int main()
     initGame(juegos,TAM_GAME);
     initCliente(clientes,TAM_CUSTUMER);
     initAlquiler(alquileres,TAM_RENT);
-/*
+
     setArrayJuegos(juegos,"Bingo",200,1,0);
     setArrayJuegos(juegos,"Cara o Cruz",400,2,1);
     setArrayJuegos(juegos,"Dados",900,3,2);
@@ -40,7 +40,7 @@ int main()
     setArrayAlquiler(alquileres,4,1,4,3,17,2,2011);
     setArrayAlquiler(alquileres,5,2,5,4,8,11,2017);
 
-*/
+
     do
     {
         system("cls");

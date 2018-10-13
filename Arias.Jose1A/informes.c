@@ -129,7 +129,7 @@ void controllerInformes(eAlquiler* arrayAlquilres, int lenAlquilres,eJuegos* arr
 
         system("cls");
 
-        printf("\n1. PROMEDIO Y TOTAL  \n2. CANTIDAD \n3. LISTAR CLIENTES JUEGO DETERMINADO \n4. LISTAR JUEGOS CLIENTES DETERMINADO\n5. JUEGOS MENOS ALQUILADOS\n6. BURBUJEO MAS EFICIENTE\n7. ORDEMIENTO INSERCION \n10. SALIR \n");
+        printf("\n1. PROMEDIO Y TOTAL  \n2. CANTIDAD \n3. LISTAR CLIENTES JUEGO DETERMINADO \n4. LISTAR JUEGOS CLIENTES DETERMINADO\n5. JUEGOS MENOS ALQUILADOS\n6. BURBUJEO MAS EFICIENTE\n7. ORDEMIENTO INSERCION\n8. LISTAR EL/LOS JUEGOS MENOS ALQUILADO/S \n10. SALIR \n");
         opcion= getInt("\n Seleccione una opcion: ");
         switch(opcion)
         {
@@ -141,7 +141,7 @@ void controllerInformes(eAlquiler* arrayAlquilres, int lenAlquilres,eJuegos* arr
         case 2:
             system("cls");
             cantidadJuegosPromedioAbajo(arrayAlquilres,lenAlquilres,arrayJuegos,lenJuegos);
-            system("pasue");
+            system("pause");
             break;
         case 3:
             system("cls");
@@ -158,6 +158,12 @@ void controllerInformes(eAlquiler* arrayAlquilres, int lenAlquilres,eJuegos* arr
             break;
         case 7:
             ordenacion_insercion(arrayClientes,lenClientes);
+            break;
+        case 8:
+            system("cls");
+            juegosMenosAlquilados(arrayAlquilres,lenAlquilres,arrayJuegos,lenJuegos);
+            system("pause");
+            break;
         case 10:
             seguir = 'n';
             break;
@@ -206,4 +212,63 @@ void ordenacion_insercion (eClientes* arrayClientes, int lenClientes)
     }
     mostrarTodosClientes(arrayClientes,lenClientes);
 }
+int cantidadAlquileresPorJuego(eAlquiler* arrayAlquilres, int lenAlquilres,int idJuego)
+{
+    int cantidad = 0;
+    int i;
 
+    for(i=0; i<lenAlquilres; i++)
+    {
+        if(arrayAlquilres[i].idJuego == idJuego && arrayAlquilres[i].isEmpty == RENT_USED)
+        {
+            cantidad++;
+        }
+    }
+    return cantidad;
+}
+int minimoJuegosAlquilados(eAlquiler* arrayAlquilres, int lenAlquilres,eJuegos* arrayJuegos,int lenJuegos)
+{
+    int minimo;
+    int flag = 0;
+    int i;
+    int cantidad;
+
+    for(i=0; i<lenAlquilres; i++)
+    {
+        if(arrayAlquilres[i].isEmpty == RENT_USED)
+        {
+            cantidad =  cantidadAlquileresPorJuego(arrayAlquilres,lenAlquilres,arrayJuegos[i].idJuego);
+            if(cantidad < minimo || flag == 0)
+            {
+                minimo = cantidad;
+                flag = 1;
+            }
+        }
+
+    }
+    return minimo;
+}
+void juegosMenosAlquilados(eAlquiler* arrayAlquilres, int lenAlquilres,eJuegos* arrayJuegos,int lenJuegos)
+{
+    //int minimo;
+    int cantidad;
+    int i;
+
+    cantidad = minimoJuegosAlquilados(arrayAlquilres,lenAlquilres,arrayJuegos,lenJuegos);
+
+    printf("\n --- Juegos menos alquilados\n\n");
+
+    for(i=0; i<lenAlquilres; i++)
+    {
+        if(arrayAlquilres[i].isEmpty == RENT_USED)
+        {
+            //cantidad = cantidadAlquileresPorJuego(arrayAlquilres,lenAlquilres,arrayJuegos[i].idJuego);
+            if(cantidad == cantidadAlquileresPorJuego(arrayAlquilres,lenAlquilres,arrayJuegos[i].idJuego))
+            {
+                printf("\n %s \n",arrayJuegos[i].descripcion);
+            }
+        }
+
+    }
+
+}
