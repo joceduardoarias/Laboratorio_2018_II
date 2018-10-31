@@ -1,0 +1,12 @@
+# depslib dependency file v1.0
+1539404418 source:c:\users\elkinjose\documents\laboratorios\practica\getstring_malloc_realloc\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1539404418 c:\users\elkinjose\documents\laboratorios\practica\getstring_malloc_realloc\utn.h
+
+1539404418 source:c:\users\elkinjose\documents\laboratorios\practica\getstring_malloc_realloc\utn.h
+
