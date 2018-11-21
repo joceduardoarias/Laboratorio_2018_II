@@ -1,0 +1,103 @@
+# depslib dependency file v1.0
+1542756867 source:c:\users\elkinjose\documents\laboratorios\practica\parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"utn.h"
+
+1542744039 c:\users\elkinjose\documents\laboratorios\practica\parcial2\linkedlist.h
+
+1542756989 c:\users\elkinjose\documents\laboratorios\practica\parcial2\employee.h
+
+1542743626 c:\users\elkinjose\documents\laboratorios\practica\parcial2\utn.h
+
+1542756363 source:c:\users\elkinjose\documents\laboratorios\practica\parcial2\employee.c
+	<stdio.h>
+	<stdlib.h>
+	"Employee.h"
+	<string.h>
+
+1542743139 source:c:\users\elkinjose\documents\laboratorios\practica\parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+
+1542743250 c:\users\elkinjose\documents\laboratorios\practica\parcial2\controller.h
+
+1542743928 source:c:\users\elkinjose\documents\laboratorios\practica\parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1542743963 source:c:\users\elkinjose\documents\laboratorios\practica\parcial2\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
+1542751613 source:c:\users\elkinjose\documents\laboratorios\practica\parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1542756868 source:d:\ariasjose\parcial2\controller.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+	"utn.h"
+
+1542803596 d:\ariasjose\parcial2\linkedlist.h
+
+1542806873 d:\ariasjose\parcial2\employee.h
+
+1542743628 d:\ariasjose\parcial2\utn.h
+
+1542806875 source:d:\ariasjose\parcial2\employee.c
+	<stdio.h>
+	<stdlib.h>
+	"Employee.h"
+	<string.h>
+
+1542806552 source:d:\ariasjose\parcial2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1542807895 source:d:\ariasjose\parcial2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<conio.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"utn.h"
+
+1542743252 d:\ariasjose\parcial2\controller.h
+
+1542743930 source:d:\ariasjose\parcial2\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+
+1542802508 source:d:\ariasjose\parcial2\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"utn.h"
+
