@@ -1,0 +1,7 @@
+D:\VisualStudio\Arias.jose\proyecto01\bin\Debug\proyecto01.exe.config
+D:\VisualStudio\Arias.jose\proyecto01\bin\Debug\proyecto01.exe
+D:\VisualStudio\Arias.jose\proyecto01\bin\Debug\proyecto01.pdb
+D:\VisualStudio\Arias.jose\proyecto01\obj\Debug\proyecto01.csprojAssemblyReference.cache
+D:\VisualStudio\Arias.jose\proyecto01\obj\Debug\proyecto01.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Arias.jose\proyecto01\obj\Debug\proyecto01.exe
+D:\VisualStudio\Arias.jose\proyecto01\obj\Debug\proyecto01.pdb

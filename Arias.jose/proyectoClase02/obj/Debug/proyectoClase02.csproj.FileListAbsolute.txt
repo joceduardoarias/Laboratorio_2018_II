@@ -1,0 +1,7 @@
+D:\VisualStudio\Arias.jose\proyectoClase02\bin\Debug\proyectoClase02.exe.config
+D:\VisualStudio\Arias.jose\proyectoClase02\bin\Debug\proyectoClase02.exe
+D:\VisualStudio\Arias.jose\proyectoClase02\bin\Debug\proyectoClase02.pdb
+D:\VisualStudio\Arias.jose\proyectoClase02\obj\Debug\proyectoClase02.csproj.CoreCompileInputs.cache
+D:\VisualStudio\Arias.jose\proyectoClase02\obj\Debug\proyectoClase02.exe
+D:\VisualStudio\Arias.jose\proyectoClase02\obj\Debug\proyectoClase02.pdb
+D:\VisualStudio\Arias.jose\proyectoClase02\obj\Debug\proyectoClase02.csprojAssemblyReference.cache
